@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Feature>
+            <active>true</active>
+            <codePool>local</codePool>
+                    </SM_Feature>
+    </modules>
+</config>

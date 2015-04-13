@@ -7,7 +7,7 @@
       *
       * @return $this
       */
-     public function addCategoryFilter(Mage_Catalog_Model_Category $category)
+     public function addCategoryFilterModify($category)
      {
          if (!empty($category)) {
              parent::addCategoryFilter($category);

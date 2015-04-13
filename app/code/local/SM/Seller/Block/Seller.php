@@ -26,11 +26,12 @@ class SM_Seller_Block_Seller extends Mage_Core_Block_Template
         $toDate = $date->setDay(1)->getDate()->get('Y-MM-dd');
         $fromDate = $date->subMonth(1)->getDate()->get('Y-MM-dd');
 
+
         $collection = Mage::getResourceModel('seller/product_collection')
             ->addAttributeToSelect(Mage::getSingleton('catalog/config')->getProductAttributes())
             ->addAttributeToSelect(array('name', 'price', 'small_image'))
             ->addStoreFilter()
-            ->addCategoryFilter(Mage::registry('current_category'))
+            ->addCategoryFilterModify(Mage::registry('current_category'))
             ->addPriceData()
             ->addTaxPercents()
             ->addUrlRewrite()
