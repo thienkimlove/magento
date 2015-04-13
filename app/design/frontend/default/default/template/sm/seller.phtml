@@ -1,0 +1,42 @@
+<?php if (($_products = $this->getBestsellerProducts()) && $_products->getSize()): ?>
+<div class="block-image-slider">
+    <div class="block-title">
+        <h2>SM BestSeller</h2>
+    </div>
+    <div class="productslider-container">
+        <div id="productslider-sm-seller">
+            <?php foreach ($_products as $_product): ?>
+                <div class="slider-item">
+                    <a href="<?php echo $_product->getProductUrl() ?>"
+                       title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="carousel-image">
+                        <img src="<?php echo $this->helper('catalog/image')->init($_product,'small_image')->resize(250); ?>"
+                             width="250" height="250" alt="<?php echo $this->stripTags($this->getImageLabel($_product,'small_image'), null, true) ?>" /></a>
+                    <div class="slider-item-content">
+                        <p>
+                            <?php echo $_product->getName() ?>
+                        </p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+        <div class="productslider-controls">
+            <a id="btn-prev-sm-seller"
+               class="btn-prev" href="#">&lt;</a>
+            <a id="btn-next-sm-seller"
+               class="btn-next" href="#">&gt;</a>
+            <div id="pager-sm-seller"
+                 class="pager"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        jQuery("#productslider-sm-seller").carouFredSel({
+            width: '100%',
+            prev: '#btn-prev-sm-seller',
+            next: '#btn-next-sm-seller',
+            pagination: '#pager-sm-seller'
+        });
+    });
+</script>
+<?php endif; ?>

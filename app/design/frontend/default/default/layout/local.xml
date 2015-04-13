@@ -1,0 +1,36 @@
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addJs">
+                <js>jquery/jquery.js</js>
+            </action>
+            <action method="addJs">
+                <js>jquery/jquery.noconflict.js</js>
+            </action>
+        </reference>
+    </default>
+    <mock_product_list>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/productslider.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/carouFredSel/jquery.carouFredSel-6.2.1-packed.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/carouFredSel/helper-plugins/jquery.mousewheel.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/carouFredSel/helper-plugins/jquery.touchSwipe.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/carouFredSel/helper-plugins/jquery.transit.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/carouFredSel/helper-plugins/jquery.ba-throttle-debounce.min.js</name></action>
+        </reference>
+    </mock_product_list>
+    <cms_index_index>
+        <update handle="mock_product_list" />
+        <reference name="content">
+            <block type="seller/seller" name="sm_seller" after="page_content_heading" template="sm/seller.phtml"/>
+        </reference>
+    </cms_index_index>
+
+    <catalog_category_view>
+        <update handle="mock_product_list" />
+        <reference name="content">
+            <block type="seller/seller" name="sm_seller" after="category.products" template="sm/seller.phtml"/>
+        </reference>
+    </catalog_category_view>
+
+</layout>

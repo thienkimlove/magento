@@ -1,0 +1,7 @@
+.productslider-container {width:700px;background-color:#DDD;}
+.productslider-container .slider-item {width:250px;padding:20px;margin:20px;background-color:#BBB;float:left;clear:none;}
+.productslider-container .productslider-controls{overflow:hidden;}
+.productslider-container .productslider-controls .btn-prev{float:left;}
+.productslider-container .productslider-controls .btn-next{float:right;}
+.productslider-container .productslider-controls .pager {textalign:center;}
+.productslider-container .productslider-controls .pager a{margin:0 10px;}

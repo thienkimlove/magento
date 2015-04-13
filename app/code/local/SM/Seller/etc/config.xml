@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <SM_Seller>
+            <version>1.0.0</version>
+        </SM_Seller>
+    </modules>
+    <global>
+		<helpers>
+            <seller>
+                <class>SM_Seller_Helper</class>
+            </seller>
+        </helpers>
+        <blocks>
+            <seller>
+                <class>SM_Seller_Block</class>
+            </seller>
+        </blocks>
+        <models>
+            <seller>
+                <class>SM_Seller_Model</class>
+                <resourceModel>seller_resource</resourceModel>
+            </seller>
+
+            <seller_resource>
+                <class>SM_Seller_Model_Resource</class>
+            </seller_resource>
+        </models>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <sm_seller_options translate="title" module="seller">
+                                            <title>Bestseller Settings</title>
+                                        </sm_seller_options>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>
